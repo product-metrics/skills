@@ -1,0 +1,33 @@
+{
+  "name": "product-metrics",
+  "version": "1.1.0",
+  "description": "Product Metrics skills for any online store: set up and check server-side conversion tracking, bid on profit (POAS), new customers, returning customers or lifetime value in Google Ads, Meta and ChatGPT Ads, and analyse Google Ads with real figures. Includes the product-metrics skill that routes to the right setup skill, and connects the Product Metrics MCP server.",
+  "author": {
+    "name": "Product Metrics",
+    "url": "https://www.productmetrics.io"
+  },
+  "homepage": "https://www.productmetrics.io/docs/agent-skills/overview",
+  "repository": "https://github.com/product-metrics/skills",
+  "license": "MIT",
+  "keywords": [
+    "ecommerce",
+    "google-ads",
+    "meta-ads",
+    "chatgpt-ads",
+    "poas",
+    "server-side-tracking",
+    "conversion-tracking",
+    "ltv"
+  ],
+  "displayName": "Product Metrics",
+  "logo": "assets/logo.png",
+  "category": "integrations",
+  "tags": [
+    "ecommerce",
+    "google-ads",
+    "meta-ads",
+    "chatgpt-ads",
+    "poas"
+  ],
+  "mcpServers": "./.mcp.json"
+}

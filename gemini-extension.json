@@ -1,0 +1,11 @@
+{
+  "name": "product-metrics",
+  "version": "1.1.0",
+  "description": "Product Metrics skills: server-side conversion tracking and profit (POAS) bidding for Shopify, WooCommerce, Lightspeed, Magento, Shopware and any website on Cloudflare, in Google Ads, Meta and ChatGPT Ads.",
+  "contextFileName": "GEMINI.md",
+  "mcpServers": {
+    "product-metrics": {
+      "httpUrl": "https://www.productmetrics.io/mcp"
+    }
+  }
+}

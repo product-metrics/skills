@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "product-metrics",
+  "description": "Product Metrics skills: server-side conversion tracking and profit (POAS) bidding for Shopify, WooCommerce, Lightspeed, Magento, Shopware and any website on Cloudflare, in Google Ads, Meta and ChatGPT Ads.",
+  "owner": {
+    "name": "Product Metrics",
+    "url": "https://www.productmetrics.io"
+  },
+  "plugins": [
+    {
+      "name": "product-metrics",
+      "source": "./plugins/product-metrics",
+      "description": "Product Metrics skills for any online store: set up and check server-side conversion tracking, bid on profit (POAS), new customers, returning customers or lifetime value in Google Ads, Meta and ChatGPT Ads, and analyse Google Ads with real figures. Includes the product-metrics skill that routes to the right setup skill, and connects the Product Metrics MCP server.",
+      "category": "marketing",
+      "tags": [
+        "ecommerce",
+        "google-ads",
+        "meta-ads",
+        "chatgpt-ads",
+        "poas",
+        "server-side-tracking",
+        "conversion-tracking",
+        "ltv"
+      ]
+    },
+    {
+      "name": "product-metrics-shopify",
+      "source": "./plugins/product-metrics-shopify",
+      "description": "Shopify: server-side conversion tracking, Enhanced Conversions and Advanced Matching, Customer Match lists, and POAS, new customer, returning customer and LTV bidding in Google Ads, Meta (Conversions API) and ChatGPT Ads (OpenAI Conversions API), with Product Metrics. 17 skills, one per setup task and ad channel.",
+      "category": "marketing",
+      "tags": [
+        "shopify",
+        "google-ads",
+        "meta-conversions-api",
+        "openai-conversions-api",
+        "poas",
+        "server-side-tracking",
+        "ecommerce"
+      ]
+    },
+    {
+      "name": "product-metrics-woocommerce",
+      "source": "./plugins/product-metrics-woocommerce",
+      "description": "WooCommerce: server-side conversion tracking, Enhanced Conversions and Advanced Matching, Customer Match lists, and POAS, new customer, returning customer and LTV bidding in Google Ads, Meta (Conversions API) and ChatGPT Ads (OpenAI Conversions API), with Product Metrics. 17 skills, one per setup task and ad channel.",
+      "category": "marketing",
+      "tags": [
+        "woocommerce",
+        "google-ads",
+        "meta-conversions-api",
+        "openai-conversions-api",
+        "poas",
+        "server-side-tracking",
+        "ecommerce"
+      ]
+    },
+    {
+      "name": "product-metrics-lightspeed",
+      "source": "./plugins/product-metrics-lightspeed",
+      "description": "Lightspeed: server-side conversion tracking, Enhanced Conversions and Advanced Matching, Customer Match lists, and POAS, new customer, returning customer and LTV bidding in Google Ads, Meta (Conversions API) and ChatGPT Ads (OpenAI Conversions API), with Product Metrics. 17 skills, one per setup task and ad channel.",
+      "category": "marketing",
+      "tags": [
+        "lightspeed",
+        "google-ads",
+        "meta-conversions-api",
+        "openai-conversions-api",
+        "poas",
+        "server-side-tracking",
+        "ecommerce"
+      ]
+    },
+    {
+      "name": "product-metrics-magento",
+      "source": "./plugins/product-metrics-magento",
+      "description": "Magento: server-side conversion tracking, Enhanced Conversions and Advanced Matching, Customer Match lists, and POAS, new customer, returning customer and LTV bidding in Google Ads, Meta (Conversions API) and ChatGPT Ads (OpenAI Conversions API), with Product Metrics. 17 skills, one per setup task and ad channel.",
+      "category": "marketing",
+      "tags": [
+        "magento",
+        "google-ads",
+        "meta-conversions-api",
+        "openai-conversions-api",
+        "poas",
+        "server-side-tracking",
+        "ecommerce"
+      ]
+    },
+    {
+      "name": "product-metrics-shopware",
+      "source": "./plugins/product-metrics-shopware",
+      "description": "Shopware: server-side conversion tracking, Enhanced Conversions and Advanced Matching, Customer Match lists, and POAS, new customer, returning customer and LTV bidding in Google Ads, Meta (Conversions API) and ChatGPT Ads (OpenAI Conversions API), with Product Metrics. 17 skills, one per setup task and ad channel.",
+      "category": "marketing",
+      "tags": [
+        "shopware",
+        "google-ads",
+        "meta-conversions-api",
+        "openai-conversions-api",
+        "poas",
+        "server-side-tracking",
+        "ecommerce"
+      ]
+    },
+    {
+      "name": "product-metrics-cloudflare",
+      "source": "./plugins/product-metrics-cloudflare",
+      "description": "Any website on Cloudflare: server-side conversion tracking, Enhanced Conversions and Advanced Matching, Customer Match lists, and POAS, new customer, returning customer and LTV bidding in Google Ads, Meta (Conversions API) and ChatGPT Ads (OpenAI Conversions API), with Product Metrics. 17 skills, one per setup task and ad channel.",
+      "category": "marketing",
+      "tags": [
+        "cloudflare",
+        "google-ads",
+        "meta-conversions-api",
+        "openai-conversions-api",
+        "poas",
+        "server-side-tracking",
+        "ecommerce"
+      ]
+    }
+  ]
+}

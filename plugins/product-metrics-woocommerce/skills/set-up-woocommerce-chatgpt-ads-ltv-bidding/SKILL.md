@@ -1,0 +1,63 @@
+---
+name: set-up-woocommerce-chatgpt-ads-ltv-bidding
+description: >-
+  LTV (customer lifetime value) bidding for WooCommerce (WordPress) in ChatGPT Ads. Use this skill
+  when a WooCommerce merchant wants ChatGPT Ads to value customers by what they spend over time: LTV
+  or CLV bidding, or value-based bidding for repeat buyers. With every paid order it sends the
+  customer's lifetime revenue and profit, so the campaign bids on customers who come back. It works
+  through Product Metrics, so use it even when Product Metrics is never mentioned. Not for POAS, new
+  customer or returning customer bidding: each has its own skill, as do other store platforms and ad
+  channels.
+license: MIT
+metadata:
+  author: Product Metrics
+  version: "1.2.0"
+  docs: https://www.productmetrics.io/docs/bidding/ltv/woocommerce-openai
+---
+
+# WooCommerce lifetime value (LTV) bidding in ChatGPT Ads
+
+Send each customer's lifetime revenue and profit from WooCommerce orders to ChatGPT Ads through the OpenAI Conversions API and bid on it. It matters because a first order understates customers who come back; lifetime value lets the campaign pay more for the customers worth more.
+
+You run the Product Metrics steps through its CLI or MCP server; the person does the steps in WooCommerce and ChatGPT Ads. Read `references/working-with-product-metrics.md` once for how to work with both.
+
+**All conversion actions by agents are secondary**, the status Product Metrics creates its actions with. Choosing what a campaign bids or optimises on (making an action primary, or picking the Meta or ChatGPT Ads conversion) is the person's step, by every route and also when they ask: give them the exact clicks, wait until they say it is done, then read it back.
+
+## Workflow
+
+1. **Read where setup stands** with `productmetrics setup get-status --json` (MCP: `setup.get_status`), and skip every step that is done.
+2. **Make sure server-side tracking to ChatGPT Ads is live.** If it isn't, set it up first with `set-up-woocommerce-chatgpt-ads-conversions-api` (or `references/connect-woocommerce.md` and `references/connect-chatgpt-ads.md`).
+3. **Follow `references/ltv-bidding.md`** step by step and confirm each **You should see** line before you move on: later steps depend on earlier ones (the consent banner decides what is sent for each order, and checks only pass once a test order has arrived).
+4. **Hand the switch to the person.** They create the conversion on the Product Metrics custom event in ChatGPT Ads Manager and select it as the campaign's conversion, with the labels from the reference. This step is theirs. Wait until they say it is done.
+5. **Agree the target** with the facts below, and suggest one campaign first.
+6. **Report back** what is live now, what the person still has to do (with the exact labels from the reference), and how to check it again later.
+
+## Target ROAS facts
+
+- A target ROAS is a percentage of the value sent. On a profit value, 100% is break-even and 150% keeps €0.50 profit per €1 of ad spend.
+- An order with an unknown cost goes with revenue only; a loss-making order's profit is sent as 0.
+- Set the target on what a customer is worth over time; don't copy the purchase action's target, because each LTV conversion carries what that order adds to the customer's lifetime value.
+- In ChatGPT Ads, the person creates a conversion on the Product Metrics custom event (for profit: `pm_order_profit`) in Ads Manager, after a test order has sent one, and optimises the campaign on its value, which they select themselves.
+
+## References
+
+| Read | When | Docs page |
+| --- | --- | --- |
+| `references/ltv-bidding.md` | LTV bidding: prerequisites, the steps, how it works on WooCommerce, troubleshooting and FAQ | https://www.productmetrics.io/docs/bidding/ltv/woocommerce-openai |
+| `references/connect-woocommerce.md` | The WooCommerce store isn't connected yet, or its connection is broken | https://www.productmetrics.io/docs/platforms/woocommerce |
+| `references/connect-chatgpt-ads.md` | ChatGPT Ads isn't connected yet, or you need the full list of what Product Metrics sends to it | https://www.productmetrics.io/docs/channels/openai |
+| `references/working-with-product-metrics.md` | Before your first command: interface, rules, browser steps, secrets | https://www.productmetrics.io/docs/cli/for-agents |
+
+If there is no `references/` folder next to this file (the skill was installed from the docs site), fetch the docs page in the last column instead, with `.md` appended for Markdown: it has the same steps.
+
+## Related skills
+
+- `set-up-woocommerce-chatgpt-ads-conversions-api`: Server-side tracking for WooCommerce in ChatGPT Ads
+- `set-up-woocommerce-chatgpt-ads-customer-matching`: Customer data matching for WooCommerce in ChatGPT Ads
+- `set-up-woocommerce-chatgpt-ads-poas-bidding`: POAS and ROAS bidding for WooCommerce in ChatGPT Ads
+- `set-up-woocommerce-google-ads-ltv-bidding`: LTV bidding for WooCommerce in Google Ads
+- `set-up-woocommerce-meta-ltv-bidding`: LTV bidding for WooCommerce in Meta
+- `bid-on-profit`: check POAS or ROAS bidding on any store
+- `product-metrics`: picks the right skill for any store and channel
+
+Install: `npx skills add product-metrics/skills --skill set-up-woocommerce-chatgpt-ads-ltv-bidding`. Every skill: https://www.productmetrics.io/docs/agent-skills/platform-skills.

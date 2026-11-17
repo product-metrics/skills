@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "product-metrics": {
+      "type": "http",
+      "url": "https://www.productmetrics.io/mcp"
+    }
+  }
+}

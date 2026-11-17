@@ -1,0 +1,44 @@
+{
+  "name": "product-metrics",
+  "version": "1.1.0",
+  "description": "Product Metrics skills for any online store: set up and check server-side conversion tracking, bid on profit (POAS), new customers, returning customers or lifetime value in Google Ads, Meta and ChatGPT Ads, and analyse Google Ads with real figures. Includes the product-metrics skill that routes to the right setup skill, and connects the Product Metrics MCP server.",
+  "author": {
+    "name": "Product Metrics",
+    "url": "https://www.productmetrics.io"
+  },
+  "homepage": "https://www.productmetrics.io/docs/agent-skills/overview",
+  "repository": "https://github.com/product-metrics/skills",
+  "license": "MIT",
+  "keywords": [
+    "ecommerce",
+    "google-ads",
+    "meta-ads",
+    "chatgpt-ads",
+    "poas",
+    "server-side-tracking",
+    "conversion-tracking",
+    "ltv"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "Product Metrics",
+    "shortDescription": "Track and bid on ad profit",
+    "longDescription": "Product Metrics skills for any online store: set up and check server-side conversion tracking, bid on profit (POAS), new customers, returning customers or lifetime value in Google Ads, Meta and ChatGPT Ads, and analyse Google Ads with real figures. Includes the product-metrics skill that routes to the right setup skill, and connects the Product Metrics MCP server.",
+    "developerName": "Product Metrics",
+    "category": "Business & Operations",
+    "capabilities": [],
+    "logo": "./assets/logo.png",
+    "composerIcon": "./assets/logo.png",
+    "brandColor": "#512FEB",
+    "websiteURL": "https://www.productmetrics.io",
+    "privacyPolicyURL": "https://www.productmetrics.io/privacy",
+    "termsOfServiceURL": "https://www.productmetrics.io/terms",
+    "supportURL": "https://www.productmetrics.io/contact",
+    "defaultPrompt": [
+      "Set up server-side conversion tracking for my store.",
+      "Is my tracking working? Find my last test order.",
+      "Which of my campaigns lose money after ad spend?"
+    ]
+  }
+}

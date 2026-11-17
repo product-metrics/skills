@@ -1,0 +1,56 @@
+---
+name: set-up-cloudflare-meta-advanced-matching
+description: >-
+  Meta Advanced Matching for any website on Cloudflare (Cloudflare Tracking, no store plugin). Use
+  this skill when a merchant with a website on Cloudflare wants Meta to match more purchases to ad
+  clicks: setting up Advanced Matching, or a low Event Match Quality score in Events Manager. It
+  sends hashed email, phone, name and address from each paid order with its Conversions API purchase
+  event, only with the visitor's consent. It works through Product Metrics, so use it even when
+  Product Metrics is never mentioned. Not for the Conversions API setup itself or bidding: each has
+  its own skill, as do other store platforms and ad channels.
+license: MIT
+metadata:
+  author: Product Metrics
+  version: "1.2.0"
+  docs: https://www.productmetrics.io/docs/tracking/enhanced-conversions/cloudflare-meta
+---
+
+# Meta Conversions API Advanced Matching on any website with Cloudflare
+
+Send hashed customer information from your website's orders with every Meta Conversions API event (Advanced Matching), only when the visitor allowed ad user data. Matching matters because Meta can only credit a campaign with an order it can tie to the person who clicked; hashed customer data lets it match orders that cookies alone would miss.
+
+You run the Product Metrics steps through its CLI or MCP server; the person does the steps in Cloudflare and Meta. Read `references/working-with-product-metrics.md` once for how to work with both.
+
+**All conversion actions by agents are secondary**, the status Product Metrics creates its actions with. Choosing what a campaign bids or optimises on (making an action primary, or picking the Meta or ChatGPT Ads conversion) is the person's step, by every route and also when they ask: give them the exact clicks, wait until they say it is done, then read it back.
+
+## Workflow
+
+1. **Read where setup stands** with `productmetrics setup get-status --json` (MCP: `setup.get_status`), and skip every step that is done.
+2. **Make sure server-side tracking to Meta is live.** If it isn't, set it up first with `set-up-cloudflare-meta-conversions-api` (or `references/connect-cloudflare.md` and `references/connect-meta.md`).
+3. **Follow `references/advanced-matching.md`** step by step and confirm each **You should see** line before you move on: later steps depend on earlier ones (the consent banner decides what is sent for each order, and checks only pass once a test order has arrived).
+4. **Report back** what is live now, what the person still has to do (with the exact labels from the reference), and how to check it again later.
+
+## References
+
+| Read | When | Docs page |
+| --- | --- | --- |
+| `references/advanced-matching.md` | Advanced Matching: prerequisites, the steps, how it works on any website on Cloudflare, troubleshooting and FAQ | https://www.productmetrics.io/docs/tracking/enhanced-conversions/cloudflare-meta |
+| `references/connect-cloudflare.md` | The website isn't connected yet, or its connection is broken | https://www.productmetrics.io/docs/platforms/cloudflare |
+| `references/connect-meta.md` | Meta isn't connected yet, or you need the full list of what Product Metrics sends to it | https://www.productmetrics.io/docs/channels/meta |
+| `references/working-with-product-metrics.md` | Before your first command: interface, rules, browser steps, secrets | https://www.productmetrics.io/docs/cli/for-agents |
+
+If there is no `references/` folder next to this file (the skill was installed from the docs site), fetch the docs page in the last column instead, with `.md` appended for Markdown: it has the same steps.
+
+## Related skills
+
+- `set-up-cloudflare-meta-conversions-api`: Server-side tracking for any website on Cloudflare in Meta
+- `set-up-cloudflare-meta-new-customer-bidding`: New customer bidding for any website on Cloudflare in Meta
+- `set-up-cloudflare-meta-returning-customer-bidding`: Returning customer bidding for any website on Cloudflare in Meta
+- `set-up-cloudflare-meta-poas-bidding`: POAS and ROAS bidding for any website on Cloudflare in Meta
+- `set-up-cloudflare-meta-ltv-bidding`: LTV bidding for any website on Cloudflare in Meta
+- `set-up-cloudflare-google-ads-enhanced-conversions`: Enhanced Conversions for any website on Cloudflare in Google Ads
+- `set-up-cloudflare-chatgpt-ads-customer-matching`: Customer data matching for any website on Cloudflare in ChatGPT Ads
+- `check-tracking`: check every part of tracking and find a test order
+- `product-metrics`: picks the right skill for any store and channel
+
+Install: `npx skills add product-metrics/skills --skill set-up-cloudflare-meta-advanced-matching`. Every skill: https://www.productmetrics.io/docs/agent-skills/platform-skills.
