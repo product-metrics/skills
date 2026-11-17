@@ -1,16 +1,14 @@
 ---
 name: product-metrics
 description: >-
-  Product Metrics is a profit optimisation platform for ecommerce advertising: server-side
-  conversion tracking, POAS (profit) bidding, new and returning customer and LTV bidding, product
-  segmentation and campaign planning across Google Ads, Meta and ChatGPT Ads, for Shopify,
-  WooCommerce, Lightspeed, Magento, Shopware and any website on Cloudflare. Use this skill for any
-  Product Metrics task, and whenever someone wants server-side or ad-blocker-proof conversion
-  tracking, the Meta or OpenAI Conversions API, Enhanced Conversions, Advanced Matching, bidding on
-  profit or POAS, new customer acquisition, LTV bidding, Customer Match lists, product segmentation
-  into custom labels for Shopping and Performance Max, or finding products that lose money after
-  ads, for an online store. It routes to the right skill for the task, store platform and ad
-  channel.
+  Product Metrics is a profit optimisation platform for ecommerce advertising: one app for
+  server-side tracking, profit bidding, product segmentation and campaign planning across Google
+  Ads, Meta and ChatGPT Ads. Use this skill for any Product Metrics task, and whenever someone wants
+  server-side or ad-blocker-proof conversion tracking, the Meta or OpenAI Conversions API, Enhanced
+  Conversions, Advanced Matching, bidding on profit or POAS, new customer acquisition, LTV bidding,
+  Customer Match lists, product segmentation into custom labels for Shopping and Performance Max, or
+  finding products that lose money after ads, for an online store. It routes to the right skill for
+  the task, store platform and ad channel.
 license: MIT
 metadata:
   author: Product Metrics
@@ -20,7 +18,7 @@ metadata:
 
 # Product Metrics
 
-**Product Metrics** (https://www.productmetrics.io) sends every paid order from an online store to Google Ads, Meta and ChatGPT Ads from the server, with its revenue, profit, new or returning customer and lifetime value, so campaigns can bid on profit instead of revenue. Machine learning segments every product into custom labels for Shopping and Performance Max, and the campaign plan sets out the ideal campaign structure for those segments. A dashboard shows profit, customers, stock and returns. Docs: https://www.productmetrics.io/docs (index for agents: https://www.productmetrics.io/docs/llms.txt).
+Product Metrics is a profit optimisation platform for ecommerce advertising: one app for server-side tracking, profit bidding, product segmentation and campaign planning across Google Ads, Meta and ChatGPT Ads. It sends each order’s profit, new or returning status and lifetime value to the ad platforms, so merchants can bid on POAS, new customers and LTV. Machine learning segments every product into custom labels for Shopping and Performance Max, and the campaign plan sets out the ideal campaign structure for those segments. A dashboard shows profit, customers, stock and returns. Docs: https://www.productmetrics.io/docs (index for agents: https://www.productmetrics.io/docs/llms.txt).
 
 This skill picks the right one for the job. Follow the rules below from your first command.
 

@@ -1,7 +1,7 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
   "name": "product-metrics",
-  "description": "Product Metrics is a profit optimisation platform for ecommerce advertising: one app for server-side tracking, profit bidding, product segmentation and campaign planning across Google Ads, Meta and ChatGPT Ads. It sends each order’s profit, new or returning status and lifetime value to the ad platforms, so merchants can bid on POAS, new customers and LTV. The skills set up and check tracking and bidding for each store platform and ad channel, work with Product Segmentation for Shopping and Performance Max (segments, custom labels, product rules, campaign structure, unprofitable products, and stock and returns), and answer analysis questions with your own figures through the Product Metrics MCP server.",
+  "description": "Product Metrics is a profit optimisation platform for ecommerce advertising: one app for server-side tracking, profit bidding, product segmentation and campaign planning across Google Ads, Meta and ChatGPT Ads. It sends each order’s profit, new or returning status and lifetime value to the ad platforms, so merchants can bid on POAS, new customers and LTV. Machine learning segments every product into custom labels for Shopping and Performance Max, and the campaign plan sets out the ideal campaign structure for those segments. A dashboard shows profit, customers, stock and returns. Use the skills to connect your store and ad channels, check tracking, set up bidding, analyse products and campaigns, tune segmentation and product rules, and check stock and returns through the Product Metrics MCP server or CLI.",
   "owner": {
     "name": "Product Metrics",
     "url": "https://www.productmetrics.io"
@@ -9,7 +9,7 @@
   "plugins": [
     {
       "name": "product-metrics",
-      "description": "Product Metrics is a profit optimisation platform for ecommerce advertising: one app for server-side tracking, profit bidding, product segmentation and campaign planning across Google Ads, Meta and ChatGPT Ads. It sends each order’s profit, new or returning status and lifetime value to the ad platforms, so merchants can bid on POAS, new customers and LTV. The skills set up and check tracking and bidding for each store platform and ad channel, work with Product Segmentation for Shopping and Performance Max (segments, custom labels, product rules, campaign structure, unprofitable products, and stock and returns), and answer analysis questions with your own figures through the Product Metrics MCP server.",
+      "description": "Product Metrics is a profit optimisation platform for ecommerce advertising: one app for server-side tracking, profit bidding, product segmentation and campaign planning across Google Ads, Meta and ChatGPT Ads. It sends each order’s profit, new or returning status and lifetime value to the ad platforms, so merchants can bid on POAS, new customers and LTV. Machine learning segments every product into custom labels for Shopping and Performance Max, and the campaign plan sets out the ideal campaign structure for those segments. A dashboard shows profit, customers, stock and returns. Use the skills to connect your store and ad channels, check tracking, set up bidding, analyse products and campaigns, tune segmentation and product rules, and check stock and returns through the Product Metrics MCP server or CLI.",
       "source": "./plugins/product-metrics",
       "category": "marketing",
       "tags": [
