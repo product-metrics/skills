@@ -30,6 +30,12 @@ The `product-metrics` plugin holds every skill and connects the [Product Metrics
 
 1. Install the extension: `gemini extensions install https://github.com/product-metrics/skills`
 
+### Kiro
+
+[![Add to Kiro](https://kiro.dev/images/add-to-kiro.svg)](https://kiro.dev/launch/mcp/add?name=product-metrics&config=%7B%22url%22%3A%22https%3A%2F%2Fwww.productmetrics.io%2Fmcp%22%2C%22disabled%22%3Afalse%2C%22autoApprove%22%3A%5B%5D%7D)
+
+Add the remote MCP server, then sign in through OAuth.
+
 ### Any agent with the skills CLI
 
 1. Add the skills: `npx skills add product-metrics/skills`, then pick the ones you need (`--skill <name>` adds one).
