@@ -7,8 +7,10 @@ description: >-
   WooCommerce, Lightspeed, Magento, Shopware and any website on Cloudflare. Use this skill for any
   Product Metrics task, and whenever someone wants server-side or ad-blocker-proof conversion
   tracking, the Meta or OpenAI Conversions API, Enhanced Conversions, Advanced Matching, bidding on
-  profit or POAS, new customer acquisition, LTV bidding or Customer Match lists for an online store.
-  It routes to the right skill for the store platform and ad channel.
+  profit or POAS, new customer acquisition, LTV bidding, Customer Match lists, product segmentation
+  into custom labels for Shopping and Performance Max, or finding products that lose money after
+  ads, for an online store. It routes to the right skill for the task, store platform and ad
+  channel.
 license: MIT
 metadata:
   author: Product Metrics
@@ -18,11 +20,24 @@ metadata:
 
 # Product Metrics
 
-**Product Metrics** (https://www.productmetrics.io) sends every paid order from an online store to Google Ads, Meta and ChatGPT Ads from the server, with its revenue, profit, new or returning customer and lifetime value, so campaigns can bid on profit instead of revenue. It also segments products by profitability and plans campaigns. Docs: https://www.productmetrics.io/docs (index for agents: https://www.productmetrics.io/docs/llms.txt).
+**Product Metrics** (https://www.productmetrics.io) sends every paid order from an online store to Google Ads, Meta and ChatGPT Ads from the server, with its revenue, profit, new or returning customer and lifetime value, so campaigns can bid on profit instead of revenue. Machine learning segments every product into custom labels for Shopping and Performance Max, and the campaign plan sets out the ideal campaign structure for those segments. A dashboard shows profit, customers, stock and returns. Docs: https://www.productmetrics.io/docs (index for agents: https://www.productmetrics.io/docs/llms.txt).
 
-This skill picks the right one for the job. Read `references/working-with-product-metrics.md` before your first command.
+This skill picks the right one for the job. Follow the rules below from your first command.
 
-**All conversion actions by agents are secondary**, the status Product Metrics creates its actions with. Choosing what a campaign bids or optimises on (making an action primary, or picking the Meta or ChatGPT Ads conversion) is the person's step, by every route and also when they ask: give them the exact clicks, wait until they say it is done, then read it back.
+## Rules
+
+- **All conversion actions by agents are secondary**, the status Product Metrics creates its actions with. Choosing what a campaign bids or optimises on (making an action primary, or picking the Meta or ChatGPT Ads conversion) is the person's step, by every route and also when they ask: give them the exact clicks, wait until they say it is done, then read it back.
+- **Pick the interface in this order:** the `productmetrics` CLI (check with `productmetrics status --json`, pass `--json` to every command, and run `productmetrics <group> <command> --help --json` before one you have not used); then the Product Metrics MCP server (`https://www.productmetrics.io/mcp`: `search` the API spec, then `execute`; never guess a path or body); otherwise the app steps in https://app.productmetrics.io.
+- **Read where setup stands first:** `productmetrics setup get-status --json` (MCP: `setup.get_status`). Read `journey_stage` and the `next_action` fields, read it again with `--company-id` and `--property-id` once you know them, skip every step that is done and tell the person which ones are.
+- **Discover ids, never invent them.** `company_id`, `property_id`, installation and scope ids come from earlier results.
+- **Writes:** pass `--auto-idempotency-key` (MCP: `idempotencyKey: crypto.randomUUID()`) where the command's `--help` lists it, and retry a failed write with the key the error hint names. Other writes take no key: read the state before you retry.
+- **Browser steps:** exit code 4 or `next_action: { "type": "browser", "url": … }` means the person opens the URL. Say what they will see, wait until they say they are done, then read the state again. A WooCommerce or Shopware 6 store returns `"type": "store_plugin"` instead: the person pastes the setup token into the Product Metrics plugin in their store admin before it expires.
+- **Steps in the store admin or ad platform are the person's:** give them the exact labels from the reference or docs page.
+- **Secrets:** never ask for, print or store passwords, tokens or API keys, except a credential the API needs from the person (the Lightspeed API key and secret, the Meta Conversions API access token, the OpenAI Conversions API key). Pass it straight to the command and never repeat it, log it or put it in a summary.
+- **Deletes** only when the person explicitly asks.
+- **"Ask your assistant" steps are yours.** Answer them with `productmetrics orders list --company-id <company_id> --storefront-scope-id <scope_id> --json` (MCP: `orders.list`, newest first) and `productmetrics orders get --company-id <company_id> --order-id <order_id> --storefront-scope-id <scope_id> --json` (MCP: `orders.get`), which shows an order's margin and whether its customer was new or returning.
+- **Talk to a store owner, not a developer:** short sentences, what you did, what they need to do, what comes next. ROAS is a plain number (4.2); a target ROAS is a percentage (420%). Recommend increasing or lowering priority, never "raise or cut bids".
+- The long form of these rules: https://www.productmetrics.io/docs/cli/for-agents.
 
 ## 1. Find the store platform and channel
 
@@ -53,6 +68,11 @@ By task, on any store:
 | `check-tracking` | Check every part of tracking and find a test order (read only) |
 | `bid-on-profit` | Set up and check POAS or ROAS bidding in Google Ads and Meta |
 | `analyse-google-ads` | Answer "how are my campaigns doing" and "why did ROAS drop" with real figures (read only) |
+| `check-product-segments` | Explain the six segments, what each holds, the budget on Drainers and why a product changed segment (read only) |
+| `find-unprofitable-products` | Find the products that lose money after ads, with their decision, margin and competitor prices |
+| `set-up-product-segmentation` | Choose the custom labels, tune segmentation settings and product rules, and generate the feed, after you confirm each change |
+| `check-campaign-structure` | Check that Shopping and Performance Max campaigns use the segments, and read the campaign plan results (read only) |
+| `check-stock-and-returns` | Find products advertised while out of stock, reorder dates, slow movers and return rates per category |
 | `bid-on-new-customers` | Set up new customer bidding (new customer acquisition) in Google Ads, Meta and ChatGPT Ads |
 | `bid-on-returning-customers` | Set up returning customer bidding in Google Ads, Meta and ChatGPT Ads |
 | `bid-on-ltv` | Set up LTV (customer lifetime value) bidding in Google Ads, Meta and ChatGPT Ads |

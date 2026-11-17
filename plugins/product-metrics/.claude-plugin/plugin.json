@@ -1,7 +1,7 @@
 {
   "name": "product-metrics",
-  "version": "1.1.0",
-  "description": "Product Metrics skills for any online store: set up and check server-side conversion tracking, bid on profit (POAS), new customers, returning customers or lifetime value in Google Ads, Meta and ChatGPT Ads, and analyse Google Ads with real figures. Includes the product-metrics skill that routes to the right setup skill, and connects the Product Metrics MCP server.",
+  "version": "2.0.0",
+  "description": "Product Metrics is a profit optimisation platform for ecommerce advertising: one app for server-side tracking, profit bidding, product segmentation and campaign planning across Google Ads, Meta and ChatGPT Ads. It sends each order’s profit, new or returning status and lifetime value to the ad platforms, so merchants can bid on POAS, new customers and LTV. The skills set up and check tracking and bidding for each store platform and ad channel, work with Product Segmentation for Shopping and Performance Max (segments, custom labels, product rules, campaign structure, unprofitable products, and stock and returns), and answer analysis questions with your own figures through the Product Metrics MCP server.",
   "author": {
     "name": "Product Metrics",
     "url": "https://www.productmetrics.io"
@@ -17,7 +17,9 @@
     "poas",
     "server-side-tracking",
     "conversion-tracking",
-    "ltv"
+    "ltv",
+    "product-segmentation",
+    "performance-max"
   ],
   "displayName": "Product Metrics",
   "icon": "./assets/logo.png",
